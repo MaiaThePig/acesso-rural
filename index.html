@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empresa Agro - Produtos Rurais</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo da Empresa">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li><a href="#carrinho">Carrinho (0)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="banner">
+        <img src="/mnt/data/image.png" alt="Banner da Empresa">
+        <h1>Seja bem-vindo à nossa loja rural!</h1>
+        <p>Confira nossos produtos de alta qualidade para produtores rurais.</p>
+    </section>
+
+    <section id="produtos" class="produtos">
+        <h2>Produtos</h2>
+        <div class="search-box">
+            <input type="text" id="search" placeholder="Buscar produtos...">
+        </div>
+
+        <div class="product-grid">
+            <!-- Produtos Categoria 1 -->
+            <div class="category">
+                <h3>Categoria 1 - Hortaliças</h3>
+                <div class="product-item" data-name="Alface" data-category="hortalicas" data-description="Alface fresca e orgânica, pronta para consumo." data-price="5.00">
+                    <img src="alface.jpg" alt="Alface">
+                    <h4>Alface</h4>
+                    <p>Preço: R$ 5,00</p>
+                    <button class="details-button">Detalhes</button>
+                    <button class="add-to-cart">Adicionar ao Carrinho</button>
+                </div>
+                <div class="product-item" data-name="Cenoura" data-category="hortalicas" data-description="Cenoura rica em vitaminas, perfeita para refeições saudáveis." data-price="3.00">
+                    <img src="cenoura.jpg" alt="Cenoura">
+                    <h4>Cenoura</h4>
+                    <p>Preço: R$ 3,00</p>
+                    <button class="details-button">Detalhes</button>
+                    <button class="add-to-cart">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+
+            <!-- Produtos Categoria 2 -->
+            <div class="category">
+                <h3>Categoria 2 - Fertilizantes</h3>
+                <div class="product-item" data-name="Fertilizante A" data-category="fertilizantes" data-description="Fertilizante de alta performance para aumentar a produtividade do solo." data-price="25.00">
+                    <img src="fertilizante_a.jpg" alt="Fertilizante A">
+                    <h4>Fertilizante A</h4>
+                    <p>Preço: R$ 25,00</p>
+                    <button class="details-button">Detalhes</button>
+                    <button class="add-to-cart">Adicionar ao Carrinho</button>
+                </div>
+                <div class="product-item" data-name="Fertilizante B" data-category="fertilizantes" data-description="Fertilizante orgânico para melhorar a qualidade da terra." data-price="30.00">
+                    <img src="fertilizante_b.jpg" alt="Fertilizante B">
+                    <h4>Fertilizante B</h4>
+                    <p>Preço: R$ 30,00</p>
+                    <button class="details-button">Detalhes</button>
+                    <button class="add-to-cart">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detalhamento do produto (Popup) -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+            <p id="modal-price"></p>
+        </div>
+    </div>
+
+    <!-- Carrinho de Compras -->
+    <section id="carrinho" class="carrinho">
+        <h2>Carrinho de Compras</h2>
+        <div id="cart-items">
+            <p>Seu carrinho está vazio.</p>
+        </div>
+        <button id="checkout-btn" disabled>Finalizar Compra</button>
+    </section>
+
+    <footer>
+        <p>© 2024 Empresa Agro. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
