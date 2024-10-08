@@ -28,8 +28,10 @@ nav ul {
     gap: 20px;
 }
 
+/* Lestras do topo */
+
 nav ul li a {
-    color: white;
+    color: rgb(0, 0, 0);
     text-decoration: none;
     font-weight: bold;
 }
@@ -62,30 +64,33 @@ nav ul li a {
 
 .product-grid {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    flex-direction: column; /* Mantém cada categoria em coluna */
+    gap: 20px; /* Espaçamento entre as categorias */
 }
 
 .category {
-    width: 100%;
+    display: flex; /* Exibe os produtos da categoria em linha */
+    flex-wrap: wrap; /* Permite que os produtos quebrem para uma nova linha, se necessário */
+    gap: 20px; /* Espaçamento entre os produtos */
 }
 
 .product-item {
     width: 200px;
-    border: 1px solid #ccc;
+    border: 5px solid #8bafaf;
     padding: 10px;
     text-align: center;
+    flex-grow: 1;
 }
 
 .product-item img {
-    max-width: 100%;
+    max-width: 50%;
     height: auto;
 }
 
 button.add-to-cart,
 button.details-button {
     background-color: #2a9d8f;
-    color: white;
+    color: rgb(255, 255, 255);
     border: none;
     padding: 10px;
     margin-top: 5px;
