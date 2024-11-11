@@ -17,34 +17,36 @@ async function loadProducts() {
 };
 
 const modal = document.querySelector("#product-modal");
-const closeModalButton = document.querySelector('.close');
+/*const closeModalButton = document.querySelector('.close');
 closeModalButton.addEventListener('click', () => {
     modal.style.display = 'none';
-});
+});*/
 function showDesc(category, id){
   const {name, description, price} = productsList[category][id];
 
     modal.style.display = 'block';
     document.getElementById('modal-title').textContent = name;
     document.getElementById('modal-description').textContent = description;
-    document.getElementById('modal-price').textContent = `Preço: R$${price}`;
+    document.getElementById('modal-price').textContent = price;
 }
 
 function renderProducts(categoryList, categoryName){    
-    let html = 
-    `<div class="category">
-    <h3>${categoryName}</h3>`
+    let html = `
+    <div class="products-container">
+    `
     
     categoryList.forEach(productId => {
         const product = productsList[categoryName][productId];
         const toAdd = `
-        <div class="product-item" data-name="${product.name}" data-category="${categoryName}" data-description="${product.description}" data-price="${product.price}">
-                  <img src="${product.imgSrc}" alt="${product.name}">
-                <h4>${product.name}</h4>
-                <p>Preço: R$ ${product.price}</p>
-                <button class="details-button" onClick="showDesc('${categoryName}', '${productId}')">Detalhes</button>
-                <button class="add-to-cart" onClick="addToCart('${categoryName}', '${productId}')">Adicionar ao Carrinho</button>
-            </div>`
+        <div class="products-container">
+            <div class="box">
+                <img src="${product.imgSrc}" alt="${product.name}">
+                <h2>${product.name}</h2>
+                <h3 class="price">R$${product.price} <span>/unidade</span></h3>
+                <i class='bx bx-cart-alt'></i>
+                <i class='bx bx-heart'></i>
+            </div>
+        </div>`
         
         html += toAdd
         
@@ -56,7 +58,7 @@ function renderProducts(categoryList, categoryName){
 };
 
 addEventListener("load", async() => {
-    const productGrid = document.querySelector(".product-grid")
+    const productGrid = document.querySelector(".products")
     await loadProducts()
     Object.keys(productsList).forEach(categoryName => {
         const products = Object.keys(productsList[categoryName])
