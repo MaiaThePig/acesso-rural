@@ -27,7 +27,7 @@ function showDesc(category, id){
     modal.style.display = 'block';
     document.getElementById('modal-title').textContent = name;
     document.getElementById('modal-description').textContent = description;
-    document.getElementById('modal-price').textContent = `Preço: R$ ${price}`;
+    document.getElementById('modal-price').textContent = `Preço: R$${price}`;
 }
 
 function renderProducts(categoryList, categoryName){    
@@ -39,7 +39,7 @@ function renderProducts(categoryList, categoryName){
         const product = productsList[categoryName][productId];
         const toAdd = `
         <div class="product-item" data-name="${product.name}" data-category="${categoryName}" data-description="${product.description}" data-price="${product.price}">
-                <img src="${product.imgSrc}" alt="${product.name}">
+                  <img src="${product.imgSrc}" alt="${product.name}">
                 <h4>${product.name}</h4>
                 <p>Preço: R$ ${product.price}</p>
                 <button class="details-button" onClick="showDesc('${categoryName}', '${productId}')">Detalhes</button>
