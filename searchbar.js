@@ -1,6 +1,6 @@
 function startSearchBar(){
     const searchInput = document.getElementById('search');
-    const productItems = document.querySelectorAll('.product-item');
+    const productItems = document.querySelectorAll('products-container');
 
     searchInput.addEventListener('input', () => {
         const query = searchInput.value.toLowerCase();

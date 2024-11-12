@@ -11,13 +11,8 @@
 
   <!-- conexao com css-->
   <link rel="stylesheet" href="styles.css">
-
-  <!-- icones social css-->
-  <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-
-  <!-- swipper css-->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
  
 </head>
 <body>
@@ -75,8 +70,18 @@
     </div>
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
-    
   </section>
+
+<div class="wrapper">
+  <div class="label">Pesquise o produto desejado</div>
+  <div class="searchbar">
+    <input id="searchQueryInput" type="text" name="searchQueryInput" placeholder="Pesquisa" value=""/>
+    <button id="searchQuerySubmit" type="submit" name="searchQuerySubmit">
+        <svg style="width: 24px; height: 10px;" viewBox="0 0 24 24"><path fill="#666666"/>
+          </svg>
+  </div>
+</div>
+
 
   <!--Categorias-->
   <section class="categories" id="categories">
