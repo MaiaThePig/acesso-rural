@@ -21,3 +21,16 @@ window.onscroll = () => {
   menu.classList.remove('bx-x');
   navbar.classList.remove('active');
 }
+
+const buttonDropDown = document.querySelector('#showMore')
+
+buttonDropDown.onclick = () => {
+  var moreText = document.querySelector('.sobreMore');
+
+  if (moreText.style.display === "inline") {
+    moreText.style.display = "none";
+    return
+
+  };
+  moreText.style.display = 'inline';
+};

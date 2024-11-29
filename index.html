@@ -12,9 +12,9 @@
   <!-- conexao com css-->
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
- 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 </head>
+
 <body>
   <!--header-->
   <header>
@@ -35,116 +35,67 @@
   <!-- Home -->
   <section class="home swiper" id="home">
     <div class="swiper-wrapper">
-
-      <!-- Slide 1 -->
-
       <div class="swiper-slide container">
         <div class="home-text">
           <h1>Seja bem-vindo<br>à nossa<br>loja rural!</h1>
-          <a href="#" class="btn">Compre<i class='bx bx-right-arrow-alt'></i></a>
         </div>
-        <img src="img/home1.png" alt="">
       </div>
-
-      <!--Slide 2-->
-
-      <div class="swiper-slide container">
-        <div class="home-text">
-          <h1>Seja bem-vindo<br>à nossa<br>loja rural!</h1>
-          <a href="#" class="btn">Compre<i class='bx bx-right-arrow-alt'></i></a>
-        </div>
-        <img src="img/home2.png" alt="Home Slide 3">
-
-      </div>
-
-      <!-- Slide 3 -->
-
-      <div class="swiper-slide container">
-        <div class="home-text">
-          <h1>Seja bem-vindo<br>à nossa<br>loja rural!</h1>
-          <a href="#" class="btn">Compre<i class='bx bx-right-arrow-alt'></i></a>
-        </div>
-        <img src="img/home3.png" alt="">
-      </div>
-
     </div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
   </section>
-
-<div class="wrapper">
-  <div class="label">Pesquise o produto desejado</div>
-  <div class="searchbar">
-    <input id="searchQueryInput" type="text" name="searchQueryInput" placeholder="Pesquisa" value=""/>
-    <button id="searchQuerySubmit" type="submit" name="searchQuerySubmit">
-        <svg style="width: 24px; height: 10px;" viewBox="0 0 24 24"><path fill="#666666"/>
-          </svg>
-  </div>
-</div>
-
 
   <!--Categorias-->
   <section class="categories" id="categories">
     <div class="heading">
-      <h1><span>Categorias</span></h1>
-        <a href="#" class="btn">Veja tudo<i class='bx bx-right-arrow-alt'></i></a>
-
+        <h1><span>Categorias</span></h1><!-- Botão de Remover Filtro -->
+        <button class="btn" id="remove-filter" onclick="removeFilter()">Remover Filtro</button>
+        
     </div>
-    <!-- Container Content-->
-     <div class="categories-container">
 
-      <!-- 1 Box -->
-      <div class="box box1">
-        <img src="img/cate1.png" alt="">
-        <h2>Sementes</h2>
-        <i class='bx bx-right-arrow-alt'></i>
-      </div>
-
-      <!-- 2 Box -->
-      <div class="box box2">
-        <img src="img/cate2.png" alt="">
-        <h2>Fertililzantes</h2>
-        <i class='bx bx-right-arrow-alt'></i>
-      </div>
-
-      <!-- 3 Box -->
-      <div class="box box3">
-        <img src="img/cate3.png" alt="">
-        <h2>Mudas</h2>
-        <i class='bx bx-right-arrow-alt'></i>
-      </div>
-
-      <!-- 4 Box -->
-      <div class="box box4">
-        <img src="img/cate4.png" alt="">
-        <h2>Defensivos</h2>
-        <i class='bx bx-right-arrow-alt'></i>
-      </div>
-
-      <!-- 5 Box -->
-      <div class="box box5">
-        <img src="img/cate5.png" alt="">
-        <h2>Rações</h2>
-        <i class='bx bx-right-arrow-alt'></i>
-      </div>
-
-     </div>
-  </section>
+    <!-- Container Content -->
+    <div class="categories-container">
+        <div class="box box1" onclick="filterProducts('Semente')">
+            <img src="img/cate1.png" alt="">
+            <h2>Sementes</h2>
+            <i class='bx bx-right-arrow-alt'></i>
+        </div>
+        <div class="box box2" onclick="filterProducts('Fertililzante')">
+            <img src="img/cate2.png" alt="">
+            <h2>Fertililzantes</h2>
+            <i class='bx bx-right-arrow-alt'></i>
+        </div>
+        <div class="box box2" onclick="filterProducts('Muda')">
+          <img src="img/cate3.png" alt="">
+          <h2>Mudas</h2>
+          <i class='bx bx-right-arrow-alt'></i>
+        </div>
+        <div class="box box2" onclick="filterProducts('Defensivo')">
+          <img src="img/cate4.png" alt="">
+          <h2>Defensivos</h2>
+          <i class='bx bx-right-arrow-alt'></i>
+        </div>
+        <div class="box box2" onclick="filterProducts('Ração')">
+          <img src="img/cate5.png" alt="">
+          <h2>Rações</h2>
+          <i class='bx bx-right-arrow-alt'></i>
+        </div>
+    </div>
+</section>
 
   <!-- Produtos -->
   <section class="products" id="products">
     <div class="heading">
-      <h1>Populares <br><span>Produtos</span></h1>
-        <a href="#" class="btn">Compre<i class='bx bx-right-arrow-alt'></i></a>
+      <h1><span>Produtos</span></h1>
     </div>
 
+    <!-- Container Content-->
+    <div class="products-container">
       <div id="product-modal" class="modal">
         <div class="modal-content">
-            <!-- <span class="close">&times;</span> -->
-            <h2 id="modal-title"></h2>
-            <p id="modal-description"></p>
-            <p id="modal-price"></p>
+          <h2 id="modal-title"></h2>
+          <p id="modal-description"></p>
+          <p id="modal-price"></p>
         </div>
+      </div>
     </div>
   </section>
 
@@ -152,10 +103,12 @@
   <section class="about" id="about">
     <img src="img/about.jpg" alt="">
     <div class="about-test">
-      <span>Sobre nós</span>
       <p>A Acesso Rural, fundada em 2009, é especialista em sementes de alta qualidade genética e adubos foliares de tecnologia avançada, oferecendo aos produtores rurais inovação e suporte técnico completo.</p>
       <p>Nossa missão é impulsionar a produtividade no campo com insumos de excelência e dedicação contínua à melhoria agrícola.</p>
-      <a href="sobre.html" class="btn">Veja mais<i class='bx bx-right-arrow-alt'></i></a>
+      <span class="sobreMore" style="display: none;">
+      <p>Colocamos a ética em primeiro lugar, garantindo práticas transparentes e responsáveis. Oferecemos produtos de alta qualidade e com confiabilidade, para que você tenha sempre os melhores resultados.</p> 
+      <p>A acima de tudo, acreditamos na parceria com nossos clientes, construindo relações duradouras e de confiança.</p></span>
+      <a href="#sobre" id="showMore" onclick="" class="btn">Veja mais<i class='bx bx-right-arrow-alt'></i></a>
     </div>
   </section>
 
@@ -193,7 +146,7 @@
             <i class='bx bxs-star' ></i>
             <i class='bx bxs-star' ></i>
           </div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis reprehenderit rem, animi quidem mollitia impedit laudantium.</p>
+          <p>Comprei um esterco, achei o preço um pouco salgado, porém o gosto também era e amei! Recomendo.</p>
           <div class="review-profile">
             <img src="img/c2.png" alt="">
             <h3>Gustavo Henrique</h3>

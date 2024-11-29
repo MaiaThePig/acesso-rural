@@ -113,20 +113,20 @@ header {
     min-height: 640px;
     display: flex;
     align-items: center;
-    background: url(img/background.png);
+    background: url(img/background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     overflow: hidden;
 }
 .container img{
-    width: 400px;
-    position: absolute;
+    width: 250px;
+    position: fixed;
     bottom: 200px;
-    right: 200px;
+    right: 500px;
 }
 .home-text{
-    padding: 0 150px;
+    padding: 0 500px;
 }
 .home-text span{
     font-weight: 400;

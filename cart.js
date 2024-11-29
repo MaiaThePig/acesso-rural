@@ -1,12 +1,5 @@
 let cart = {}
 
-//{
-//  [id]: {
-//    product: product,
-//    amount: number
-//  }
-//}
-
 function addToCart(category, id){
   const product = productsList[category][id];
   if(!cart[id]){

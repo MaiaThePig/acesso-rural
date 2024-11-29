@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <title>Admin</title>
+</head>
+<body>
+  <h2 class="tm-block-title">Adicionar produtos</h2>
+    <form class="tm-edit-product-form" id="product-form">
+      <div class="form-group mb-3">
+        <label for="name">Nome do produto</label>
+        <input id="name" name="name" type="text" class="form-control validate" required />
+      </div>
+      <div class="form-group mb-3">
+        <label for="description">Descrição do produto</label>
+        <textarea id="description" class="form-control validate" rows="3" required></textarea>
+      </div>
+      <div class="form-group mb-3">
+        <label for="category">Categoria</label>
+        <select id="category" type="text" class="form-control validate">
+          <option value="Semente">Semente</option>
+          <option value="Fertililzante">Fertililzante</option>
+          <option value="Muda">Muda</option>
+          <option value="Defensivo">Defensivo</option>
+          <option value="Ração">Ração</option>
+  </select>
+      </div>
+      <div class="form-group mb-3">
+        <label for="price">Preço</label>
+        <input id="price" class="form-control validate" required>
+      </div>
+        <i class="fas fa-cloud-upload-alt tm-upload-icon"
+          onclick="document.getElementById('fileInput').click();"></i>
+      </div>
+      <div class="custom-file mt-3 mb-3">
+        <input id="fileInput" type="file"/>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block text-uppercase">Adicionar Produto</button>
+    </form>
+    <h2>Excluir produtos</h2>
+    <section class="products" id="products" admin="1">
+      <div class="heading">
+        <h1><span>Produtos</span></h1>
+      </div>
+  
+      <!-- Container Content-->
+      <div class="products-container">
+        <div id="product-modal" class="modal">
+          <div class="modal-content">
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+            <p id="modal-price"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="upload.js"></script>
+    <script src="products.js"></script>
+</body>
+</html>
