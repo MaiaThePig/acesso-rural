@@ -52,7 +52,7 @@ function formCheckoutText(){
     return `${amount}x - ${name} - R$${price.toFixed(2)}`;
   })
 
-  return `Lista de produtos:%0a${cartList.join("%0a")}`
+  return `Olá estava interessado nesses produtos no seu site, poderia me ajudar? \n Lista de produtos:%0a${cartList.join("%0a")}`
 }
 
 const vendorList = document.querySelector("#vendedores");
@@ -65,7 +65,7 @@ function doCheckout(){
   vendorNumbers.forEach(vendor =>{
     const whatsappNumber = vendor.getAttribute("data-whatsapp");
     vendor.onclick = ()=>{
-      window.location.replace(`https://api.whatsapp.com/send/?phone=${whatsappNumber}&text=${formCheckoutText()}`)
+      window.open(`https://api.whatsapp.com/send/?phone=${whatsappNumber}&text=${formCheckoutText()}`)
       emptyCart(); 
       vendorList.style.display = "none"
     }

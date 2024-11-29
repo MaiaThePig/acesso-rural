@@ -1,7 +1,7 @@
 let productsList = {};
 
 async function loadProducts() {
-    productsList = {};  // Limpa os produtos
+    productsList = {};
     const req = await fetch("http://localhost:8000/");
     const res = await req.json();
     console.log(res);
@@ -45,7 +45,6 @@ function showDesc(category, id) {
     document.getElementById('modal-price').textContent = price;
 }
 
-// Função de renderização dos produtos filtrados
 function renderProducts(categoryList, categoryName) {
     let html = `<div class="products-container">`;
 
@@ -66,7 +65,7 @@ function renderProducts(categoryList, categoryName) {
             <img src="http://localhost:8000/uploads/${product.imgSrc}" alt="${product.name}">
             <h2>${product.name}</h2>
             <h3 class="price">R$${product.price} <span>/unidade</span></h3>
-            <i class='bx bx-cart-alt'></i>
+            <i class='bx bx-cart-alt' onclick="addToCart('${categoryName}', '${productId}');"></i>
             ${deleteButton}
         </div>`;
         
@@ -77,14 +76,11 @@ function renderProducts(categoryList, categoryName) {
     return html;
 }
 
-// Função para filtrar produtos por categoria
 function filterProducts(category) {
     const productGrid = document.querySelector(".products .products-container");
     
-    // Limpa os produtos exibidos
     productGrid.innerHTML = "";
 
-    // Verifica se há produtos para a categoria, se não, exibe uma mensagem
     if (productsList[category]) {
         const products = Object.keys(productsList[category]);
         productGrid.innerHTML = renderProducts(products, category);
@@ -93,26 +89,20 @@ function filterProducts(category) {
     }
 }
 
-// Função para remover o filtro e mostrar todos os produtos
 function removeFilter() {
     const productGrid = document.querySelector(".products .products-container");
     
-    // Limpa o conteúdo da área de produtos
     productGrid.innerHTML = "";
 
-    // Renderiza todos os produtos
-    updateProduct();  // Chama a função que renderiza todos os produtos
+    updateProduct();
 }
 
-
-// Função para carregar os produtos iniciais ou de todas as categorias
 async function updateProduct() {
     const productGrid = document.querySelector(".products .products-container");
     productGrid.innerHTML = "";
 
     await loadProducts();
     
-    // Exibe todos os produtos inicialmente
     Object.keys(productsList).forEach(categoryName => {
         const products = Object.keys(productsList[categoryName]);
         productGrid.innerHTML += renderProducts(products, categoryName);

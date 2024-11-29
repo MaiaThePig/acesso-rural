@@ -1,4 +1,4 @@
-// Função para converter o arquivo em Base64 e retornar uma Promise
+// Função para converter o arquivo em Base64 e retornar uma promise
 async function encodeFileAsBase64 (file) {
   const reader = new FileReader()
 
@@ -24,7 +24,7 @@ async function encodeFileAsBase64 (file) {
 
 // Enviar os dados do formulário em um formato de payload
 document.getElementById('product-form').addEventListener('submit', async function(event) {
-  event.preventDefault();  // Impede o envio normal do formulário
+  event.preventDefault();
 
   const name = document.getElementById('name').value;
   const description = document.getElementById('description').value;
@@ -35,10 +35,8 @@ document.getElementById('product-form').addEventListener('submit', async functio
 
   if (file) {
     try {
-      // Converte o arquivo para base64
       const fileBase64 = await encodeFileAsBase64(file);
 
-      // Formar o payload
       const payload = {
         name: name,
         description: description,
@@ -47,7 +45,6 @@ document.getElementById('product-form').addEventListener('submit', async functio
         imgSrc: fileBase64
       };
 
-      // URL para enviar os dados
       const url = 'http://localhost:8000/';
 
       // Enviar os dados via Fetch API
